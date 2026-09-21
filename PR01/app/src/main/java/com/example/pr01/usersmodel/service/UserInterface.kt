@@ -1,5 +1,6 @@
 package com.example.pr01.usersmodel.service
 
+import com.example.pr01.usersmodel.Post
 import retrofit2.http.GET
 import com.example.pr01.usersmodel.UsersResponse
 import retrofit2.http.Body
@@ -9,6 +10,5 @@ interface UserInterface {
     @GET("users")
     suspend fun getUsers(): UsersResponse
 
-    @POST("users/add")
-    suspend fun addUsers(@Body user: UserAdd): UserAdd
+
 }

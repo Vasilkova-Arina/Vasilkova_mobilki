@@ -4,17 +4,15 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.pr01.ui.theme.PR01Theme
-import com.example.pr01.ui.theme.viewmodel.UserViewModel
-import com.example.pr01.usersmodel.service.UserAdd
+import com.example.pr01.usersmodel.Post
+import com.example.pr01.usersmodel.viewmodel.PostViewModel
+import com.example.pr01.usersmodel.viewmodel.UserViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,19 +20,27 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             //pr01
-            //val userViewModel: UserViewModel = viewModel()
-            //userViewModel.fetch()
+//            val userViewModel: UserViewModel = viewModel()
+//            userViewModel.fetch()
 
             //pr02
-            val userViewModel: UserViewModel = viewModel()
-
-            val user = UserAdd(
-                Id = 31,
-                Task = "Пропылесосить ковер",
-                Mark = "Нет"
-            )
-
-            userViewModel.userTask(user)
+//            val postViewModel: PostViewModel = viewModel()
+//
+//            val post = Post(
+//                title = "Уют в каждой детали: встречайте нашу новинку!",
+//                body = "Мы знаем, как важно возвращаться туда, где тепло и спокойно. Наша новая коллекция ароматических свечей из соевого воска создана именно для таких моментов.",
+//                tags = listOf(
+//                    "декор дома",
+//                    "уют в доме",
+//                    "аромасвечи",
+//                    "подарок девушке",
+//                    "ручная работа",
+//                    "новинка"
+//                ),
+//                views = 0
+//            )
+//
+//            postViewModel.createPost(post)
         }
     }
 }
