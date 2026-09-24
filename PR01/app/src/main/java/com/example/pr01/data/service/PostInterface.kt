@@ -1,6 +1,6 @@
-package com.example.pr01.usersmodel.service
+package com.example.pr01.data.service
 
-import com.example.pr01.usersmodel.Post
+import com.example.pr01.data.model.Post
 import retrofit2.http.Body
 import retrofit2.http.POST
 

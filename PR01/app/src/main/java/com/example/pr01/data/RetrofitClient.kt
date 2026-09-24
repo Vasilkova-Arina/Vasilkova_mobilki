@@ -1,7 +1,8 @@
-package com.example.pr01.usersmodel
+package com.example.pr01.data
 
-import com.example.pr01.usersmodel.service.PostInterface
-import com.example.pr01.usersmodel.service.UserInterface
+import com.example.pr01.data.service.PostInterface
+import com.example.pr01.data.service.TodoInterface
+import com.example.pr01.data.service.UserInterface
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -23,6 +24,7 @@ object RetrofitClient {
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
-    val UserApi: UserInterface = retrofit.create(UserInterface::class.java)
-    val PostApi: PostInterface = retrofit.create(PostInterface::class.java)
+    val userApi: UserInterface = retrofit.create(UserInterface::class.java)
+    val postApi: PostInterface = retrofit.create(PostInterface::class.java)
+    val todoApi: TodoInterface = retrofit.create(TodoInterface::class.java)
 }

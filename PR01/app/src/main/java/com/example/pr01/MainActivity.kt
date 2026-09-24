@@ -10,9 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.pr01.ui.theme.PR01Theme
-import com.example.pr01.usersmodel.Post
-import com.example.pr01.usersmodel.viewmodel.PostViewModel
-import com.example.pr01.usersmodel.viewmodel.UserViewModel
+import com.example.pr01.data.model.Post
+import com.example.pr01.ui.theme.viewmodel.PostViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,23 +23,34 @@ class MainActivity : ComponentActivity() {
 //            userViewModel.fetch()
 
             //pr02
-//            val postViewModel: PostViewModel = viewModel()
-//
-//            val post = Post(
-//                title = "Уют в каждой детали: встречайте нашу новинку!",
-//                body = "Мы знаем, как важно возвращаться туда, где тепло и спокойно. Наша новая коллекция ароматических свечей из соевого воска создана именно для таких моментов.",
-//                tags = listOf(
-//                    "декор дома",
-//                    "уют в доме",
-//                    "аромасвечи",
-//                    "подарок девушке",
-//                    "ручная работа",
-//                    "новинка"
-//                ),
-//                views = 0
+            val postViewModel: PostViewModel = viewModel()
+
+            val post = Post(
+                title = "Уют в каждой детали: встречайте нашу новинку!",
+                body = "Мы знаем, как важно возвращаться туда, где тепло и спокойно. Наша новая коллекция ароматических свечей из соевого воска создана именно для таких моментов.",
+                tags = listOf(
+                    "декор дома",
+                    "уют в доме",
+                    "аромасвечи",
+                    "подарок девушке",
+                    "ручная работа",
+                    "новинка"
+                ),
+                views = 0,
+                userId = 100
+            )
+
+            postViewModel.createPost(post)
+
+            //pr03
+//            val todoViewModel: TodoViewModel = viewModel()
+//            val todo = Todo(
+//                id = 145,
+//                todo = "Пропылесосить ковер",
+//                completed = false,
+//                userId = 31
 //            )
-//
-//            postViewModel.createPost(post)
+//            todoViewModel.todoUpdate(todo)
         }
     }
 }
