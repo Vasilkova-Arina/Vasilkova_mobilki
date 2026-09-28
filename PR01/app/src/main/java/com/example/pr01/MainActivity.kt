@@ -13,6 +13,7 @@ import com.example.pr01.ui.theme.PR01Theme
 import com.example.pr01.data.model.Post
 import com.example.pr01.ui.theme.viewmodel.PostViewModel
 import com.example.pr01.ui.theme.viewmodel.TodoViewModel
+import com.example.pr01.ui.theme.viewmodel.UserViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,8 +45,12 @@ class MainActivity : ComponentActivity() {
 //            postViewModel.createPost(post)
 
             //pr03
-            val todoViewModel: TodoViewModel = viewModel()
-            todoViewModel.todoUpdate()
+//            val todoViewModel: TodoViewModel = viewModel()
+//            todoViewModel.todoUpdate()
+
+            //pr04
+            val userViewModel: UserViewModel = viewModel()
+            userViewModel.deleteUser(18)
         }
     }
 }

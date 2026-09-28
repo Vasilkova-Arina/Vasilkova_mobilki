@@ -21,6 +21,17 @@ class UserViewModel: ViewModel() {
             }
         }
     }
+    fun deleteUser(id: Int){
+        viewModelScope.launch {
+            try{
+                val delUser = RetrofitClient.userApi.deleteUser(id)
+                Log.d("UserViewModel", "${delUser.id}\n${delUser.firstName}\n${delUser.lastName}\n" +
+                        "${delUser.age}\n${delUser.phone}\n${delUser.isDeleted}\n")
+            } catch (e: Exception){
+                Log.e("UserViewModel", "${e.message}", e)
+            }
+        }
+    }
 
 
 }
