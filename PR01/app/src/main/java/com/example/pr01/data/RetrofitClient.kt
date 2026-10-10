@@ -1,6 +1,8 @@
 package com.example.pr01.data
 
+import com.example.pr01.data.service.AvtorizInterface
 import com.example.pr01.data.service.PostInterface
+import com.example.pr01.data.service.ProductInterface
 import com.example.pr01.data.service.TodoInterface
 import com.example.pr01.data.service.UserInterface
 import okhttp3.OkHttpClient
@@ -24,7 +26,15 @@ object RetrofitClient {
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
+
+    private val retrofitSwagger = Retrofit.Builder()
+        .baseUrl("http://10.207.106.59:8080/")
+        .client(okHttpClient)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
     val userApi: UserInterface = retrofit.create(UserInterface::class.java)
     val postApi: PostInterface = retrofit.create(PostInterface::class.java)
     val todoApi: TodoInterface = retrofit.create(TodoInterface::class.java)
+    val authApi: AvtorizInterface = retrofitSwagger.create(AvtorizInterface::class.java)
+    val productApi: ProductInterface = retrofitSwagger.create(ProductInterface::class.java)
 }

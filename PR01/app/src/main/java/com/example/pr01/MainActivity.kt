@@ -11,6 +11,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.pr01.ui.theme.PR01Theme
 import com.example.pr01.data.model.Post
+import com.example.pr01.data.model.avtoriz.LoginRequest
+import com.example.pr01.ui.theme.viewmodel.LoginViewModel
 import com.example.pr01.ui.theme.viewmodel.PostViewModel
 import com.example.pr01.ui.theme.viewmodel.TodoViewModel
 import com.example.pr01.ui.theme.viewmodel.UserViewModel
@@ -20,11 +22,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            //pr01
+            //pr14
 //            val userViewModel: UserViewModel = viewModel()
 //            userViewModel.fetch()
 
-            //pr02
+            //pr15
 //            val postViewModel: PostViewModel = viewModel()
 //
 //            val post = Post(
@@ -44,13 +46,21 @@ class MainActivity : ComponentActivity() {
 //
 //            postViewModel.createPost(post)
 
-            //pr03
+            //pr16
 //            val todoViewModel: TodoViewModel = viewModel()
 //            todoViewModel.todoUpdate()
 
-            //pr04
-            val userViewModel: UserViewModel = viewModel()
-            userViewModel.deleteUser(18)
+            //pr17
+//            val userViewModel: UserViewModel = viewModel()
+//            userViewModel.deleteUser(18)
+
+            //pr18
+            val loginViewModel: LoginViewModel = viewModel()
+            val loginRequest = LoginRequest(
+                identity = "arinavasilkova123@mail.ru",
+                password = "1234"
+            )
+            loginViewModel.login(loginRequest)
         }
     }
 }
