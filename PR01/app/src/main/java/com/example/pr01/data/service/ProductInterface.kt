@@ -8,5 +8,5 @@ import retrofit2.http.Header
 
 interface ProductInterface {
     @GET("products/records")
-    suspend fun getCurrentProduct(@Header("Avtorization") token: String): ProductRecord
+    suspend fun getCurrentProduct(@Header("Authorization") token: String): ProductRecord
 }

@@ -12,11 +12,18 @@ class LoginViewModel: ViewModel() {
         viewModelScope.launch {
             try {
                 val avtorizUser = RetrofitClient.authApi.login(loginRequest)
-                Log.d("LoginViewModel", "Records: ${avtorizUser.token}\n ${avtorizUser.record}")
+                Log.d("LoginViewModel", "Token: ${avtorizUser.token}\n Record: ${avtorizUser.record}")
                 val product = RetrofitClient.productApi.getCurrentProduct("${avtorizUser.token}")
+                val items = product.items
+                for (item in items){
+                    Log.d("LoginViewModel", "${item.id}\n" +
+                            "${item.title}\n" +
+                            "${item.price}\n" +
+                            "${item.created}\n" +
+                            "${item.updated}")
+                }
                 Log.d("LoginViewModel",
-                    "${product.items}\n" +
-                            "${product.page}" +
+                            "${product.page}\n" +
                             "${product.perPage}\n" +
                             "${product.totalPages}\n" +
                             "${product.totalItems}")

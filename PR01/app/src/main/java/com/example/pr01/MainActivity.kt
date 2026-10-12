@@ -58,7 +58,7 @@ class MainActivity : ComponentActivity() {
             val loginViewModel: LoginViewModel = viewModel()
             val loginRequest = LoginRequest(
                 identity = "arinavasilkova123@mail.ru",
-                password = "1234"
+                password = "123456789"
             )
             loginViewModel.login(loginRequest)
         }
